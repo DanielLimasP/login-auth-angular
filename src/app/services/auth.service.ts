@@ -9,7 +9,7 @@ import { map } from "rxjs/operators";
 })
 export class AuthService {
   private url = "https://identitytoolkit.googleapis.com/v1/accounts:";
-  API_KEY = "AIzaSyDinBOn2NvAcS7eJNyGt-Y2-Zh9VBqMLxE";
+  API_KEY = "";
   userToken: string;
 
   headers: HttpHeaders = new HttpHeaders()
@@ -98,7 +98,7 @@ export class AuthService {
 
     const expires = Number(localStorage.getItem("expires"));
     const expiresDate = new Date();
-    expiresDate.setTime(3600);
+    expiresDate.setTime(expires);
 
     if (expiresDate > new Date()) {
       return true;
